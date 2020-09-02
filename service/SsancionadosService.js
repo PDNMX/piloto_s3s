@@ -49,9 +49,10 @@ async function post_ssancionados (body) {
     let newSort={};
 
     for (let [key, value] of Object.entries(sortObj)) {
+      if(key === "curp" || key === "rfc" || key === "nombres" || key === "segundoApellido" || key === "primerApellido" ){
+        newSort["servidorPublicoSancionado."+key] = value;
+      }
       if(key === "institucionDependencia"){
-        newSort[key+".nombre"]= value
-      }if(key === "puesto"){
         newSort[key+".nombre"]= value
       }else{
         newSort[key]= value;
@@ -69,8 +70,7 @@ async function post_ssancionados (body) {
         }
       }else if( key === "curp" || key === "rfc"){
         newQuery["servidorPublicoSancionado."+key] = { $regex : value,  $options : 'i'}
-      }
-      else if(key === "nombres" || key === "segundoApellido" || key === "primerApellido" ){
+      }else if(key === "nombres" || key === "segundoApellido" || key === "primerApellido" ){
           newQuery["servidorPublicoSancionado."+key] = { $regex : diacriticSensitiveRegex(value),  $options : 'i'}
       }else if(key === "institucionDependencia"){
         newQuery[key+".nombre"]={ $regex : diacriticSensitiveRegex(value),  $options : 'i'}
@@ -82,7 +82,7 @@ async function post_ssancionados (body) {
         newQuery[key]= value;
       }
     }
-    console.log(newQuery);
+    //console.log(newQuery);
     if(pageSize <= 200 && pageSize >= 1){
       let paginationResult  = await Ssancionados.paginate(newQuery,{page :page , limit: pageSize, sort: newSort}).then();
       let objpagination ={hasNextPage : paginationResult.hasNextPage, page:paginationResult.page, pageSize : paginationResult.limit, totalRows: paginationResult.totalDocs }
