@@ -51,8 +51,7 @@ async function post_ssancionados (body) {
     for (let [key, value] of Object.entries(sortObj)) {
       if(key === "curp" || key === "rfc" || key === "nombres" || key === "segundoApellido" || key === "primerApellido" ){
         newSort["servidorPublicoSancionado."+key] = value;
-      }
-      if(key === "institucionDependencia"){
+      }else if(key === "institucionDependencia"){
         newSort[key+".nombre"]= value
       }else{
         newSort[key]= value;

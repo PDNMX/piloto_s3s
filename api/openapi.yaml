@@ -6,12 +6,12 @@ externalDocs:
   description: Más información
   url: https://github.com/PDNMX/api_docs
 servers:
-- url: /
+  - url: /
 paths:
   /v1/ssancionados:
     post:
       tags:
-      - ssancionados
+        - ssancionados
       summary: Muestra información de los servidores públicos sancionados permitiendo
         busquedas avanzadas.
       operationId: post_ssancionados
@@ -48,12 +48,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/resError'
       security:
-      - ssancionados_auth: []
+        - ssancionados_auth: []
       x-swagger-router-controller: Ssancionados
   /v1/ssancionados/dependencias:
     get:
       tags:
-      - ssancionados
+        - ssancionados
       summary: Dependencias donde se cometió la sanción
       operationId: get_dependencias
       responses:
@@ -68,14 +68,14 @@ paths:
         "403":
           description: No tienes permisos
       security:
-      - ssancionados_auth: []
+        - ssancionados_auth: []
       x-swagger-router-controller: Ssancionados
 components:
   schemas:
     ssancionados:
       required:
-      - pagination
-      - results
+        - pagination
+        - results
       type: object
       properties:
         pagination:
@@ -91,120 +91,121 @@ components:
           page: 10
           totalRows: 100
         results:
-        - autoridadSancionadora: Organo Interno de Control
-          institucionDependencia:
-            clave: TRE345
-            siglas: SHCP
-            nombre: Secretaría de Hacienda y Crédito Público
-          tipoFalta:
-            descripcion: Administrativa grave
-            clave: NAD
-            valor: ADMINISTRATIVA GRAVE
-          resolucion:
-            fechaResolucion: 2018-05-21T00:00:00.000+0000
-            url: https://ejemplo.mx/archivo/documento.pdf
-          expediente: ABC123
-          multa:
-            monto: 30000.19
-            moneda:
-              clave: MXN
-              valor: Peso Mexicano
-          tipoSancion:
-          - clave: O
-            valor: AMONESTACIÓN
-          - clave: M
-            valor: MULTADO
-          documentos:
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_SANCION
-            titulo: Constancia de sanción...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_SANCION
-            titulo: Constancia de sanción...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          fechaCaptura: 2017-07-21T17:32:28Z
-          causaMotivoHechos: Abuso de autoridad
-          observaciones: ABC
-          servidorPublicoSancionado:
-            puesto: Director de área
-            primerApellido: Pérez
-            genero:
-              clave: M
-              valor: MASCULINO
-            segundoApellido: López
-            nivel: ABCD1234
-            rfc: PAT21343213
-            curp: ABCD780814MDFAXL
-            nombres: Carlos
-          id: "1"
-          inhabilitacion:
-            fechaInicial: 2018-08-17T00:00:00.000+0000
-            plazo: 3 meses
-            fechaFinal: 2018-11-17T00:00:00.000+0000
-        - autoridadSancionadora: Organo Interno de Control
-          institucionDependencia:
-            clave: TRE345
-            siglas: SHCP
-            nombre: Secretaría de Hacienda y Crédito Público
-          tipoFalta:
-            descripcion: Administrativa grave
-            clave: NAD
-            valor: ADMINISTRATIVA GRAVE
-          resolucion:
-            fechaResolucion: 2018-05-21T00:00:00.000+0000
-            url: https://ejemplo.mx/archivo/documento.pdf
-          expediente: ABC123
-          multa:
-            monto: 30000.19
-            moneda:
-              clave: MXN
-              valor: Peso Mexicano
-          tipoSancion:
-          - clave: O
-            valor: AMONESTACIÓN
-          - clave: M
-            valor: MULTADO
-          documentos:
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_SANCION
-            titulo: Constancia de sanción...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_SANCION
-            titulo: Constancia de sanción...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          fechaCaptura: 2017-07-21T17:32:28Z
-          causaMotivoHechos: Abuso de autoridad
-          observaciones: ABC
-          servidorPublicoSancionado:
-            puesto: Director de área
-            primerApellido: Pérez
-            genero:
-              clave: M
-              valor: MASCULINO
-            segundoApellido: López
-            nivel: ABCD1234
-            rfc: PAT21343213
-            curp: ABCD780814MDFAXL
-            nombres: Carlos
-          id: "1"
-          inhabilitacion:
-            fechaInicial: 2018-08-17T00:00:00.000+0000
-            plazo: 3 meses
-            fechaFinal: 2018-11-17T00:00:00.000+0000
+          - autoridadSancionadora: Organo Interno de Control
+            institucionDependencia:
+              clave: TRE345
+              siglas: SHCP
+              nombre: Secretaría de Hacienda y Crédito Público
+            tipoFalta:
+              descripcion: Administrativa grave
+              clave: NAD
+              valor: ADMINISTRATIVA GRAVE
+            resolucion:
+              fechaResolucion: 2018-05-21T00:00:00.000+0000
+              url: https://ejemplo.mx/archivo/documento.pdf
+            expediente: ABC123
+            multa:
+              monto: 30000.19
+              moneda:
+                clave: MXN
+                valor: Peso Mexicano
+            tipoSancion:
+              - clave: O
+                valor: AMONESTACIÓN
+              - clave: M
+                valor: MULTADO
+            documentos:
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_SANCION
+                titulo: Constancia de sanción...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_SANCION
+                titulo: Constancia de sanción...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+            fechaCaptura: 2017-07-21T17:32:28Z
+            causaMotivoHechos: Abuso de autoridad
+            observaciones: ABC
+            servidorPublicoSancionado:
+              puesto: Director de área
+              primerApellido: Pérez
+              genero:
+                clave: M
+                valor: MASCULINO
+              segundoApellido: López
+              nivel: ABCD1234
+              rfc: PAT21343213
+              curp: ABCD780814MDFAXL
+              nombres: Carlos
+            id: "1"
+            inhabilitacion:
+              fechaInicial: 2018-08-17T00:00:00.000+0000
+              plazo: 3 meses
+              fechaFinal: 2018-11-17T00:00:00.000+0000
+          - autoridadSancionadora: Organo Interno de Control
+            institucionDependencia:
+              clave: TRE345
+              siglas: SHCP
+              nombre: Secretaría de Hacienda y Crédito Público
+            tipoFalta:
+              descripcion: Administrativa grave
+              clave: NAD
+              valor: ADMINISTRATIVA GRAVE
+            resolucion:
+              fechaResolucion: 2018-05-21T00:00:00.000+0000
+              url: https://ejemplo.mx/archivo/documento.pdf
+            expediente: ABC123
+            multa:
+              monto: 30000.19
+              moneda:
+                clave: MXN
+                valor: Peso Mexicano
+            tipoSancion:
+              - clave: O
+                valor: AMONESTACIÓN
+              - clave: M
+                valor: MULTADO
+            documentos:
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_SANCION
+                titulo: Constancia de sanción...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_SANCION
+                titulo: Constancia de sanción...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+            fechaCaptura: 2017-07-21T17:32:28Z
+            causaMotivoHechos: Abuso de autoridad
+            observaciones: ABC
+            servidorPublicoSancionado:
+              puesto: Director de área
+              primerApellido: Pérez
+              genero:
+                clave: M
+                valor: MASCULINO
+              segundoApellido: López
+              nivel: ABCD1234
+              rfc: PAT21343213
+              curp: ABCD780814MDFAXL
+              nombres: Carlos
+            id: "1"
+            inhabilitacion:
+              fechaInicial: 2018-08-17T00:00:00.000+0000
+              plazo: 3 meses
+              fechaFinal: 2018-11-17T00:00:00.000+0000
     post_query:
       type: object
       properties:
         pageSize:
+          maximum: 200
           type: integer
           description: Número de registros a mostrar por página, el máximo permitido
             es 200 y el minimo 1, en caso de no recibir el parámetro, su valor será
@@ -228,8 +229,8 @@ components:
         $ref: '#/components/schemas/dependencias_inner'
     resError:
       required:
-      - code
-      - message
+        - code
+        - message
       properties:
         code:
           type: string
@@ -246,16 +247,16 @@ components:
         Ej. Inhabilitado y Multado. En caso de ser OTRO, en el atributo valor se deberá
         enviar la cadena correspondiente.
       example:
-      - clave: O
-        valor: AMONESTACIÓN
-      - clave: M
-        valor: MULTADO
+        - clave: O
+          valor: AMONESTACIÓN
+        - clave: M
+          valor: MULTADO
       items:
         $ref: '#/components/schemas/tipoSancion_inner'
     tipoFalta:
       required:
-      - clave
-      - valor
+        - clave
+        - valor
       type: object
       properties:
         clave:
@@ -275,35 +276,35 @@ components:
             * `ABCI` - ACTUACIÓN BAJO CONFLICTO DE INTERÉS\n* `CIND` - CONTRATACIÓ\
             N INDEBIDA\n* `EOCI` - ENRIQUECIMIENTO OCULTO U OCULTAMIENTO DE CONFLICTO\
             \ DE INTERÉS\n* `TINF` - TRÁFICO DE INFLUENCIAS\n* `ENCB` - ENCUBRIMIENTO\n\
-            * `DSCT` - DESACATO\n* `OJUST` -\tOBSTRUCCIÓN DE LA JUSTICIA\n* `OTRO`\
+            * `DSCT` - DESACATO\n* `OJUST` -  OBSTRUCCIÓN DE LA JUSTICIA\n* `OTRO`\
             \ - OTRO  \nexample: AG\n"
           enum:
-          - NAD
-          - VPC
-          - VLNP
-          - AUT
-          - CEX
-          - IDSP
-          - DCSP
-          - EIFM
-          - VDH
-          - AG
-          - ANG
-          - AC
-          - HSEX
-          - ASEX
-          - PEC
-          - DRP
-          - UII
-          - AFN
-          - ABCI
-          - CIND
-          - EOCI
-          - TINF
-          - ENCB
-          - DSCT
-          - OJUST
-          - OTRO
+            - NAD
+            - VPC
+            - VLNP
+            - AUT
+            - CEX
+            - IDSP
+            - DCSP
+            - EIFM
+            - VDH
+            - AG
+            - ANG
+            - AC
+            - HSEX
+            - ASEX
+            - PEC
+            - DRP
+            - UII
+            - AFN
+            - ABCI
+            - CIND
+            - EOCI
+            - TINF
+            - ENCB
+            - DSCT
+            - OJUST
+            - OTRO
         valor:
           type: string
           description: Valor del tipo de falta
@@ -319,10 +320,10 @@ components:
         valor: ADMINISTRATIVA GRAVE
     ssancionados_pagination:
       required:
-      - hasNextPage
-      - page
-      - pageSize
-      - totalRows
+        - hasNextPage
+        - page
+        - pageSize
+        - totalRows
       type: object
       properties:
         pageSize:
@@ -351,7 +352,7 @@ components:
         totalRows: 100
     ssancionados_institucionDependencia:
       required:
-      - nombre
+        - nombre
       type: object
       properties:
         nombre:
@@ -382,9 +383,9 @@ components:
             \ - MASCULINO\n  * `O` - OTRO\n"
           example: M
           enum:
-          - F
-          - M
-          - O
+            - F
+            - M
+            - O
         valor:
           type: string
           description: Valor del genero
@@ -394,9 +395,9 @@ components:
         valor: MASCULINO
     ssancionados_servidorPublicoSancionado:
       required:
-      - nombres
-      - primerApellido
-      - puesto
+        - nombres
+        - primerApellido
+        - puesto
       type: object
       properties:
         rfc:
@@ -442,7 +443,7 @@ components:
         nombres: Carlos
     ssancionados_resolucion:
       required:
-      - fechaResolucion
+        - fechaResolucion
       type: object
       properties:
         url:
@@ -475,8 +476,8 @@ components:
         valor: Peso Mexicano
     ssancionados_multa:
       required:
-      - moneda
-      - monto
+        - moneda
+        - monto
       type: object
       properties:
         monto:
@@ -514,11 +515,11 @@ components:
         fechaFinal: 2018-11-17T00:00:00.000+0000
     ssancionados_documentos:
       required:
-      - descripcion
-      - fecha
-      - id
-      - titulo
-      - url
+        - descripcion
+        - fecha
+        - id
+        - titulo
+        - url
       type: object
       properties:
         id:
@@ -532,10 +533,10 @@ components:
             "CONSTANCIA_INHABILITACION", "CONSTANCIA_ABSTENCION"]
           example: CONSTANCIA_SANCION
           enum:
-          - RESOLUCION
-          - CONSTANCIA_SANCION
-          - CONSTANCIA_INHABILITACION
-          - CONSTANCIA_ABSTENCION
+            - RESOLUCION
+            - CONSTANCIA_SANCION
+            - CONSTANCIA_INHABILITACION
+            - CONSTANCIA_ABSTENCION
         titulo:
           type: string
           description: Título del documento
@@ -562,13 +563,13 @@ components:
         url: https://ejemplo.mx/archivo/documento.pdf
     ssancionados_results:
       required:
-      - causaMotivoHechos
-      - fechaCaptura
-      - id
-      - institucionDependencia
-      - servidorPublicoSancionado
-      - tipoFalta
-      - tipoSancion
+        - causaMotivoHechos
+        - fechaCaptura
+        - id
+        - institucionDependencia
+        - servidorPublicoSancionado
+        - tipoFalta
+        - tipoSancion
       type: object
       properties:
         id:
@@ -637,23 +638,23 @@ components:
             clave: MXN
             valor: Peso Mexicano
         tipoSancion:
-        - clave: O
-          valor: AMONESTACIÓN
-        - clave: M
-          valor: MULTADO
+          - clave: O
+            valor: AMONESTACIÓN
+          - clave: M
+            valor: MULTADO
         documentos:
-        - descripcion: Descripción del documento
-          fecha: 2019-11-20T00:00:00.000+0000
-          tipo: CONSTANCIA_SANCION
-          titulo: Constancia de sanción...
-          id: doc-1
-          url: https://ejemplo.mx/archivo/documento.pdf
-        - descripcion: Descripción del documento
-          fecha: 2019-11-20T00:00:00.000+0000
-          tipo: CONSTANCIA_SANCION
-          titulo: Constancia de sanción...
-          id: doc-1
-          url: https://ejemplo.mx/archivo/documento.pdf
+          - descripcion: Descripción del documento
+            fecha: 2019-11-20T00:00:00.000+0000
+            tipo: CONSTANCIA_SANCION
+            titulo: Constancia de sanción...
+            id: doc-1
+            url: https://ejemplo.mx/archivo/documento.pdf
+          - descripcion: Descripción del documento
+            fecha: 2019-11-20T00:00:00.000+0000
+            tipo: CONSTANCIA_SANCION
+            titulo: Constancia de sanción...
+            id: doc-1
+            url: https://ejemplo.mx/archivo/documento.pdf
         fechaCaptura: 2017-07-21T17:32:28Z
         causaMotivoHechos: Abuso de autoridad
         observaciones: ABC
@@ -681,93 +682,105 @@ components:
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
         curp:
           type: string
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
         nombres:
           type: string
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
         primerApellido:
           type: string
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
         segundoApellido:
           type: string
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
         institucionDependencia:
           type: string
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
     post_query_query:
       properties:
         id:
           type: string
           description: Devuelve resultados al buscar una declaración por su ID. Si
-            se especifica este valor, los demas filtros son omitidos.
+            se especifica este valor, los demas filtros son omitidos. En caso de enviar
+            cadena vacía, el filtro debe ser omitido.
           example: 123abc
         nombres:
           type: string
-          description: Nombres o nombre del servidor público sancionado.
+          description: Nombres o nombre del servidor público sancionado. Si se envía
+            cadena vacía se debe omitir el filtro.
           example: Juan Pedro
         primerApellido:
           type: string
-          description: Primer apellido del servidor público sancionado.
+          description: Primer apellido del servidor público sancionado. Si se envía
+            cadena vacía se debe omitir el filtro.
           example: Tenorio
         segundoApellido:
           type: string
-          description: Segundo apellido del servidor público sancionado.
+          description: Segundo apellido del servidor público sancionado. Si se envía
+            cadena vacía se debe omitir el filtro.
           example: Calderon
         rfc:
           type: string
-          description: RFC del Servidor Público con homoclave
+          description: RFC del Servidor Público con homoclave. Si se envía cadena
+            vacía se debe omitir el filtro.
           example: PAT21343213
         curp:
           type: string
-          description: CURP del Servidor Público
+          description: CURP del Servidor Público. Si se envía cadena vacía se debe
+            omitir el filtro.
           example: ABCD780814MDFAXL
         institucionDependencia:
           type: string
           description: Nombre de la institución dependencia a la que pertenece el
-            servidor público sancionado.
+            servidor público sancionado. Si se envía cadena vacía se debe omitir el
+            filtro.
           example: Secretaría de Hacienda y Crédito Público
         tipoSancion:
           uniqueItems: true
           type: array
           description: "Clave(s) del tipo de sanción aplicada. \n  * `I` - INHABILITADO\
             \ \n  * `M` - MULTADO\n  * `S` - SUSPENSIÓN DEL EMPLEO, CARGO O COMISIÓ\
-            N\n  * `D` - DESTITUCIÓN DEL EMPLO, CARGO O COMISIÓN\n\n\n*******Deberá\
+            N\n  * `D` - DESTITUCIÓN DEL EMPLO, CARGO O COMISIÓN\n  * `IRSC` - INDEMNIZACIÓ\
+            N RESARCITORIA\n  * `SE` - SANCIÓN ECONÓMICA\n  * `O` - OTRO\n\n*******Deberá\
             \ devolver todos los registros que contengan al menos uno de los valores\
-            \ solicitados.\n"
+            \ solicitados en el arreglo. En caso de enviar arreglo vacio se deberá\
+            \ omitir el filtro.\n"
           example:
-          - I
-          - M
+            - I
+            - M
           items:
             type: string
             enum:
-            - I
-            - M
-            - S
-            - D
+              - I
+              - M
+              - S
+              - D
+              - IRSC
+              - SE
+              - O
         rfcSolicitante:
           type: string
           description: RFC de la persona quien hace la consulta, si se omite este
@@ -797,8 +810,8 @@ components:
         nombre: Secretaría de Hacienda y Crédito Público
     tipoSancion_inner:
       required:
-      - clave
-      - valor
+        - clave
+        - valor
       type: object
       properties:
         clave:
@@ -809,13 +822,13 @@ components:
             N RESARCITORIA\n  * `SE` - SANCIÓN ECONÓMICA\n  * `O` - OTRO\n"
           example: M
           enum:
-          - I
-          - M
-          - S
-          - D
-          - IRSC
-          - SE
-          - O
+            - I
+            - M
+            - S
+            - D
+            - IRSC
+            - SE
+            - O
         valor:
           type: string
           description: Valor del tipo de sanción
