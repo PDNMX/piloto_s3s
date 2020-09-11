@@ -35,7 +35,7 @@ let ssancionadosSchema = new Schema({
         fechaResolucion: String
     },
     multa:{
-        monto: String,
+        monto: Number,
         moneda: {
             clave:String,
             valor:String
