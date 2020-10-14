@@ -1,6 +1,6 @@
-# API S3.1 - Servidores públicos sancionados.
+# API S3S - Servidores públicos sancionados.
 ## Introducción
-API del S3.1 - Servidores públicos sancionados. El funcionamiento del API está apegado a las especificaciones solicitadas por la PDN.
+API del S3S - Servidores públicos sancionados. El funcionamiento del API está apegado a las especificaciones solicitadas por la PDN.
 
 Este proyecto forma parte de una solución que contempla las APIs del S2 y S3 en ambiente de desarrollo, para reproducirlo completamente, se sugiere el siguiente orden:
 * [Instalación](https://docs.google.com/document/d/1aQ0_f3sGiyE94anGy2pwOFn6KLucYTc3ZkrWM8rikIo/edit?usp=sharing): preparación del ambiente de desarrollo.
@@ -13,7 +13,7 @@ Este proyecto forma parte de una solución que contempla las APIs del S2 y S3 en
 
 ## Documentación
 
-* [Documentación API S3.1](https://docs.google.com/document/d/1UbokCMsV3hUMdcHZ6yc_oQnBgQ6vRGWhFF6whuwkwok/edit?usp=sharing)
+* [Documentación API S3S](https://docs.google.com/document/d/1UbokCMsV3hUMdcHZ6yc_oQnBgQ6vRGWhFF6whuwkwok/edit?usp=sharing)
 * [Documentación completa](https://drive.google.com/drive/folders/1aQLhmtKwbWiTy20Ei9k-zy6hneUuYTn2?usp=sharing)
 
 
