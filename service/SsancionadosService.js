@@ -43,7 +43,8 @@ async function post_ssancionados (body) {
   let query = body.query === undefined ? {} : body.query;
   let select = {
     'servidorPublicoSancionado.curp' : 0,
-    'servidorPublicoSancionado.rfc' : 0
+    'servidorPublicoSancionado.rfc' : 0,
+    'servidorPublicoSancionado.genero' : 0
   }
   if(page <= 0 ){
     throw new RangeError("Error campo page fuera de rango");
