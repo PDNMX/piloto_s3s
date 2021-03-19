@@ -41,7 +41,10 @@ async function post_ssancionados (body) {
   let page = body.page;  //numero de papostgina a mostrar
   let pageSize = body.pageSize;
   let query = body.query === undefined ? {} : body.query;
-
+  let select = {
+    'servidorPublicoSancionado.curp' : 0,
+    'servidorPublicoSancionado.rfc' : 0
+  }
   if(page <= 0 ){
     throw new RangeError("Error campo page fuera de rango");
   }else{
@@ -83,7 +86,7 @@ async function post_ssancionados (body) {
     }
     //console.log(newQuery);
     if(pageSize <= 200 && pageSize >= 1){
-      let paginationResult  = await Ssancionados.paginate(newQuery,{page :page , limit: pageSize, sort: newSort}).then();
+      let paginationResult  = await Ssancionados.paginate(newQuery,{page :page , limit: pageSize, sort: newSort, select: select}).then();
       let objpagination ={hasNextPage : paginationResult.hasNextPage, page:paginationResult.page, pageSize : paginationResult.limit, totalRows: paginationResult.totalDocs }
       let objresults = paginationResult.docs;
 
