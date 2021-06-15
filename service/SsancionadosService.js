@@ -72,8 +72,10 @@ async function post_ssancionados (body) {
           }
         }
       }else if( key === "curp" || key === "rfc"){
-        newQuery["servidorPublicoSancionado."+key] = { $regex : value,  $options : 'i'}
+        if(value.trim().length)
+           newQuery["servidorPublicoSancionado."+key] = { $regex : value,  $options : 'i'}
       }else if(key === "nombres" || key === "segundoApellido" || key === "primerApellido" ){
+        if(value.trim().length)
           newQuery["servidorPublicoSancionado."+key] = { $regex : diacriticSensitiveRegex(value),  $options : 'i'}
       }else if(key === "institucionDependencia"){
         newQuery[key+".nombre"]={ $regex : diacriticSensitiveRegex(value),  $options : 'i'}
