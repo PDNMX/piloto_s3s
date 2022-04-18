@@ -70,7 +70,7 @@ async function post_ssancionados (body) {
         }
       }else if( key === "curp" || key === "rfc"){
         if(value.trim().length)
-           newQuery["servidorPublicoSancionado."+key] = { $regex : value,  $options : 'i'}        
+           newQuery["servidorPublicoSancionado."+key] = { $regex : diacriticSensitiveRegex(value),  $options : 'i'}
       }else if(key === "nombres" || key === "segundoApellido" || key === "primerApellido" ){
         if(value.trim().length)
           newQuery["servidorPublicoSancionado."+key] = { $regex : diacriticSensitiveRegex(value),  $options : 'i'}

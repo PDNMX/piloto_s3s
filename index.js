@@ -83,6 +83,13 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.post('/v1/ssancionados', swaggerValidation.validate, post_ssancionados);
 app.get('/v1/ssancionados/dependencias', swaggerValidation.validate, get_dependencias);
 
+app.get('/getVersion', async (req,res, next) => {
+	res.json({
+		'version':'Producción(18/04/2022)'
+	});
+})
+;
+
 app.use((err, req, res, next) => {
 	res.status(err.status || 500).json({
 		code: err.status || 500,
